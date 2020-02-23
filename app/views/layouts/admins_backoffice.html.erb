@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viwport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+    
+    <title>Agendamento</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application'%>
+    <%= stylesheet_link_tag    'admins_backoffice'%>
+
+<!-- Custom fonts for this template-->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  </head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="index.html">
+          <i class="fas fa-fw fa-tachometer-alt"></i>
+          <span>Dashboard</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Interface
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>Components</span>
+        </a>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Components:</h6>
+            <a class="collapse-item" href="buttons.html">Buttons</a>
+            <a class="collapse-item" href="cards.html">Cards</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Utilities Collapse Menu -->
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+          <i class="fas fa-fw fa-wrench"></i>
+          <span>Utilities</span>
+        </a>
+        <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Custom Utilities:</h6>
+            <a class="collapse-item" href="utilities-color.html">Colors</a>
+            <a class="collapse-item" href="utilities-border.html">Borders</a>
+            <a class="collapse-item" href="utilities-animation.html">Animations</a>
+            <a class="collapse-item" href="utilities-other.html">Other</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
+
+      <!-- Heading -->
+      <div class="sidebar-heading">
+        Addons
+      </div>
+
+      <!-- Nav Item - Pages Collapse Menu -->
+      <li class="nav-item active">
+        <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
+          <i class="fas fa-fw fa-folder"></i>
+          <span>Pages</span>
+        </a>
+        <div id="collapsePages" class="collapse show" aria-labelledby="headingPages" data-parent="#accordionSidebar">
+          <div class="bg-white py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Login Screens:</h6>
+            <a class="collapse-item" href="login.html">Login</a>
+            <a class="collapse-item" href="register.html">Register</a>
+            <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+            <div class="collapse-divider"></div>
+            <h6 class="collapse-header">Other Pages:</h6>
+            <a class="collapse-item" href="404.html">404 Page</a>
+            <a class="collapse-item active" href="blank.html">Blank Page</a>
+          </div>
+        </div>
+      </li>
+
+      <!-- Nav Item - Charts -->
+      <li class="nav-item">
+        <a class="nav-link" href="charts.html">
+          <i class="fas fa-fw fa-chart-area"></i>
+          <span>Charts</span></a>
+      </li>
+
+      <!-- Nav Item - Tables -->
+      <li class="nav-item">
+        <a class="nav-link" href="tables.html">
+          <i class="fas fa-fw fa-table"></i>
+          <span>Tables</span></a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider d-none d-md-block">
+
+      <!-- Sidebar Toggler (Sidebar) -->
+      <div class="text-center d-none d-md-inline">
+        <button class="rounded-circle border-0" id="sidebarToggle"></button>
+      </div>
+
+    </ul>
+    <!-- End of Sidebar -->
+
+    <!-- Content Wrapper -->
+    <div id="content-wrapper" class="d-flex flex-column">
+
+      <!-- Main Content -->
+      <div id="content">
+
+        <!-- Topbar -->
+        <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+          <!-- Sidebar Toggle (Topbar) -->
+          <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+
+          <!-- Topbar Search -->
+          <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+            <div class="input-group">
+              <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+              <div class="input-group-append">
+                <button class="btn btn-primary" type="button">
+                  <i class="fas fa-search fa-sm"></i>
+                </button>
+              </div>
+            </div>
+          </form>
+
+          <!-- Topbar Navbar -->
+          <ul class="navbar-nav ml-auto">
+
+            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+            <li class="nav-item dropdown no-arrow d-sm-none">
+              <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-search fa-fw"></i>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                <form class="form-inline mr-auto w-100 navbar-search">
+                  <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="button">
+                        <i class="fas fa-search fa-sm"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+
+            <!-- Nav Item - Alerts -->
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <!-- Counter - Alerts -->
+                <span class="badge badge-danger badge-counter">3+</span>
+              </a>
+              <!-- Dropdown - Alerts -->
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header">
+                  Alerts Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-primary">
+                      <i class="fas fa-file-alt text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 12, 2019</div>
+                    <span class="font-weight-bold">A new monthly report is ready to download!</span>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-success">
+                      <i class="fas fa-donate text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 7, 2019</div>
+                    $290.29 has been deposited into your account!
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-warning">
+                      <i class="fas fa-exclamation-triangle text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">December 2, 2019</div>
+                    Spending Alert: We've noticed unusually high spending for your account.
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Show All Alerts</a>
+              </div>
+            </li>
+
+            <!-- Nav Item - Messages -->
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-envelope fa-fw"></i>
+                <!-- Counter - Messages -->
+                <span class="badge badge-danger badge-counter">7</span>
+              </a>
+              <!-- Dropdown - Messages -->
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="messagesDropdown">
+                <h6 class="dropdown-header">
+                  Message Center
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/fn_BT9fwg_E/60x60" alt="">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div class="font-weight-bold">
+                    <div class="text-truncate">Hi there! I am wondering if you can help me with a problem I've been having.</div>
+                    <div class="small text-gray-500">Emily Fowler · 58m</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/AU4VPcFN4LE/60x60" alt="">
+                    <div class="status-indicator"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">I have the photos that you ordered last month, how would you like them sent to you?</div>
+                    <div class="small text-gray-500">Jae Chun · 1d</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/CS2uCrpNzJY/60x60" alt="">
+                    <div class="status-indicator bg-warning"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">Last month's report looks great, I am very happy with the progress so far, keep up the good work!</div>
+                    <div class="small text-gray-500">Morgan Alvarez · 2d</div>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="dropdown-list-image mr-3">
+                    <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60" alt="">
+                    <div class="status-indicator bg-success"></div>
+                  </div>
+                  <div>
+                    <div class="text-truncate">Am I a good boy? The reason I ask is because someone told me that people say this to all dogs, even if they aren't good...</div>
+                    <div class="small text-gray-500">Chicken the Dog · 2w</div>
+                  </div>
+                </a>
+                <a class="dropdown-item text-center small text-gray-500" href="#">Read More Messages</a>
+              </div>
+            </li>
+
+            <div class="topbar-divider d-none d-sm-block"></div>
+
+            <!-- Nav Item - User Information -->
+            <li class="nav-item dropdown no-arrow">
+              <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline text-gray-600 small"><%= current_user.email %></span>
+                <img class="img-profile rounded-circle" src="data:image/jpeg;base64,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">
+              </a>
+              <!-- Dropdown - User Information -->
+              <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                  <%= link_to destroy_admin_session_path, method: :delete do %>
+                <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Sair
+                  <% end %>
+                </a>
+              </div>
+            </li>
+
+          </ul>
+
+        </nav>
+        <!-- End of Topbar -->
+
+        <!-- Begin Page Content -->
+        <div class="container-fluid">
+
+          <!-- Page Heading -->
+          <h1 class="h3 mb-4 text-gray-800">LAYOUT ADMINS BACKOFFICE</h1>
+          <%= yield %>
+
+        </div>
+        <!-- /.container-fluid -->
+
+      </div>
+      <!-- End of Main Content -->
+
+      <!-- Footer -->
+      <footer class="sticky-footer bg-white">
+        <div class="container my-auto">
+          <div class="copyright text-center my-auto">
+            <span>Copyright &copy; Your Website 2019</span>
+          </div>
+        </div>
+      </footer>
+      <!-- End of Footer -->
+
+    </div>
+    <!-- End of Content Wrapper -->
+
+  </div>
+  <!-- End of Page Wrapper -->
+
+  <!-- Scroll to Top Button-->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <!-- Logout Modal-->
+  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+        </div>
+        <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+        <div class="modal-footer">
+          <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          <a class="btn btn-primary" href="login.html">Logout</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <%= javascript_include_tag 'application'%>
+  <%= javascript_include_tag 'admins_backoffice'%>
+
+
+</body>
+
+</html>
